@@ -6,23 +6,19 @@ namespace Algorithms
     {
         public void Sort(int[] array)
         {
-            if (array.Length <= 1) return;
-            Sort(array, 0, array.Length / 2, array.Length);
+            if (array.Length <= 1) return; // Lists of 1 or less items are already sorted by definition
+            Sort(array, 0, array.Length);
         }
 
-        private static void Sort(int[] array, int leftStart, int rightStart, int lastIndex)
+        private static void Sort(int[] array, int subStart, int lastIndex)
         {
-            if (leftStart + 1 == lastIndex) return;
+            if (subStart + 1 == lastIndex) return; // Lists of 1 item are already sorted
 
-            var mid = (rightStart - leftStart) / 2;
-            mid += leftStart;
-            Sort(array, leftStart, mid, rightStart);
+            var mid = (subStart + lastIndex) / 2;
 
-            mid = (lastIndex - rightStart) / 2;
-            mid += rightStart;
-            Sort(array, rightStart, mid, lastIndex);
-
-            Merge(array, leftStart, rightStart, lastIndex);
+            Sort(array, subStart, mid);
+            Sort(array, mid, lastIndex);
+            Merge(array, subStart, mid, lastIndex);
         }
 
         private static void Merge(int[] array, int firstSortedIndex, int secondSortedIndex, int lastIndex)
