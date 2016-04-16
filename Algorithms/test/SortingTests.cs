@@ -3,7 +3,7 @@ using System;
 
 namespace Algorithms.Sorting.Tests
 {
-    public class SorterTests
+    public class SortingTests
     {
         void BaseTest(Type sorterType, params int[] input)
         {
