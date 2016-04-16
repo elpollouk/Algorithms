@@ -55,6 +55,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="src\MergeSort.cs" />
     <Compile Include="src\InsertionSort.cs" />
     <Compile Include="src\ISorter.cs" />
     <Compile Include="src\SelectionSort.cs" />

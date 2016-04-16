@@ -17,6 +17,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_BookOrder(Type sorterType)
         {
             BaseTest(sorterType, 5, 2, 4, 6, 1, 3);
@@ -24,6 +25,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_InOrder(Type sorterType)
         {
             BaseTest(sorterType, 1, 2, 3, 4, 5, 6);
@@ -31,6 +33,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_ReverseOrder(Type sorterType)
         {
             BaseTest(sorterType, 6, 5, 4, 3, 2, 1);
@@ -38,6 +41,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_EmptyList(Type sorterType)
         {
             BaseTest(sorterType);
@@ -45,6 +49,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_SingleItem(Type sorterType)
         {
             BaseTest(sorterType, 6);
@@ -52,6 +57,7 @@ namespace Algorithms
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
+        [TestCase(typeof(MergeSort))]
         public void Sort_500Random(Type sorterType)
         {
             for (var i = 0; i < 500; i++)
