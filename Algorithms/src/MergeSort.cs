@@ -24,25 +24,25 @@ namespace Algorithms
         private static void Merge(int[] array, int firstSortedIndex, int secondSortedIndex, int lastIndex)
         {
             var leftLength = secondSortedIndex - firstSortedIndex;
-            var bufferLeft = new int[leftLength + 1];
-            bufferLeft[leftLength] = Int32.MaxValue;
+            var bufferLeft = new int[leftLength];
             for (var copyIndex = 0; copyIndex < leftLength; copyIndex++)
                 bufferLeft[copyIndex] = array[firstSortedIndex + copyIndex];
 
-            var rightLength = lastIndex - secondSortedIndex;
-            var bufferRight = new int[rightLength + 1];
-            bufferRight[rightLength] = Int32.MaxValue;
-            for (var copyIndex = 0; copyIndex < rightLength; copyIndex++)
-                bufferRight[copyIndex] = array[secondSortedIndex + copyIndex];
-
             var bufferLeftIndex = 0;
-            var bufferRightIndex = 0;
             for (var i = firstSortedIndex; i < lastIndex; i++)
             {
-                if (bufferLeft[bufferLeftIndex] < bufferRight[bufferRightIndex])
+                if (bufferLeftIndex == bufferLeft.Length)
+                    return; // Everything in the second list should already be in the correct place
+                else if (secondSortedIndex == lastIndex)
+                {
+                    for (; i < lastIndex; i++)
+                        array[i] = bufferLeft[bufferLeftIndex++];
+                    return;
+                }
+                else if (bufferLeft[bufferLeftIndex] < array[secondSortedIndex])
                     array[i] = bufferLeft[bufferLeftIndex++];
                 else
-                    array[i] = bufferRight[bufferRightIndex++];
+                    array[i] = array[secondSortedIndex++];
             }
         }
     }
