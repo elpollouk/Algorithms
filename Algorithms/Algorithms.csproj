@@ -55,6 +55,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="src\Searching\BinarySearch.cs" />
     <Compile Include="src\Searching\ISearcher.cs" />
     <Compile Include="src\Searching\LinearSearch.cs" />
     <Compile Include="src\Sorting\InsertionSort.cs" />

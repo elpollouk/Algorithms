@@ -17,6 +17,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_NoItems(Type searcherType)
         {
             BaseTest(searcherType,
@@ -25,6 +26,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_OneItem_NotFound(Type searcherType)
         {
             BaseTest(searcherType,
@@ -34,6 +36,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_OneItem_FoundAt0(Type searcherType)
         {
             BaseTest(searcherType,
@@ -43,6 +46,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_TwoItems_NotFound(Type searcherType)
         {
             BaseTest(searcherType,
@@ -52,6 +56,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_TwoItem_FoundAt0(Type searcherType)
         {
             BaseTest(searcherType,
@@ -61,6 +66,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_TwoItem_FoundAt1(Type searcherType)
         {
             BaseTest(searcherType,
@@ -70,6 +76,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_ThreeItems_NotFound(Type searcherType)
         {
             BaseTest(searcherType,
@@ -79,6 +86,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_ThreeItem_FoundAt0(Type searcherType)
         {
             BaseTest(searcherType,
@@ -88,6 +96,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_ThreeItem_FoundAt1(Type searcherType)
         {
             BaseTest(searcherType,
@@ -97,6 +106,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_ThreeItem_FoundAt2(Type searcherType)
         {
             BaseTest(searcherType,
@@ -106,6 +116,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FourItems_NotFound(Type searcherType)
         {
             BaseTest(searcherType,
@@ -115,6 +126,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FourItem_FoundAt0(Type searcherType)
         {
             BaseTest(searcherType,
@@ -124,6 +136,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FourItem_FoundAt1(Type searcherType)
         {
             BaseTest(searcherType,
@@ -133,6 +146,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FourItem_FoundAt2(Type searcherType)
         {
             BaseTest(searcherType,
@@ -142,6 +156,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FourItem_FoundAt3(Type searcherType)
         {
             BaseTest(searcherType,
@@ -151,6 +166,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItems_NotFound(Type searcherType)
         {
             BaseTest(searcherType,
@@ -160,6 +176,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItem_FoundAt0(Type searcherType)
         {
             BaseTest(searcherType,
@@ -169,6 +186,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItem_FoundAt1(Type searcherType)
         {
             BaseTest(searcherType,
@@ -178,6 +196,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItem_FoundAt2(Type searcherType)
         {
             BaseTest(searcherType,
@@ -187,6 +206,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItem_FoundAt3(Type searcherType)
         {
             BaseTest(searcherType,
@@ -196,6 +216,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_FiveItem_FoundAt4(Type searcherType)
         {
             BaseTest(searcherType,
@@ -205,6 +226,7 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCase(typeof(LinearSearch))]
+        [TestCase(typeof(BinarySearch))]
         public void Search_500Items(Type searcherType)
         {
             var rnd = new Random();
