@@ -11,40 +11,48 @@ namespace Algorithms
             return sorter;
         }
 
+        void BaseTest(Type sorterType, int[] input, int[] expected)
+        {
+            ISorter sorter = NewSorter(sorterType);
+            sorter.Sort(input);
+            CollectionAssert.AreEqual(expected, input);
+        }
+
+        int[] a(params int[] args) => args;
+
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_BookOrder(Type sorterType)
         {
-            ISorter sorter = NewSorter(sorterType);
-            int[] array = { 5, 2, 4, 6, 1, 3 };
-            sorter.Sort(array);
-
-            int[] expected = { 1, 2, 3, 4, 5, 6};
-            CollectionAssert.AreEqual(expected, array);
+            BaseTest(sorterType, a(5, 2, 4, 6, 1, 3), a(1, 2, 3, 4, 5, 6));
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_InOrder(Type sorterType)
         {
-            var sorter = NewSorter(sorterType);
-            int[] array = { 1, 2, 3, 4, 5, 6 };
-            sorter.Sort(array);
-
-            int[] expected = { 1, 2, 3, 4, 5, 6 };
-            CollectionAssert.AreEqual(expected, array);
+            BaseTest(sorterType, a(1, 2, 3, 4, 5, 6), a(1, 2, 3, 4, 5, 6));
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_ReverseOrder(Type sorterType)
         {
-            var sorter = NewSorter(sorterType);
-            int[] array = { 6, 5, 4, 3, 2, 1 };
-            sorter.Sort(array);
+            BaseTest(sorterType, a(6, 5, 4, 3, 2, 1), a(1, 2, 3, 4, 5, 6));
+        }
 
-            int[] expected = { 1, 2, 3, 4, 5, 6 };
-            CollectionAssert.AreEqual(expected, array);
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_EmptyList(Type sorterType)
+        {
+            BaseTest(sorterType, a(), a());
+        }
+
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_SingleItem(Type sorterType)
+        {
+            BaseTest(sorterType, a(6), a(6));
         }
     }
 }
