@@ -1,4 +1,4 @@
-﻿namespace Algorithms
+﻿namespace Algorithms.Sorting
 {
     class SelectionSort : ISorter
     {

@@ -55,10 +55,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="src\MergeSort.cs" />
-    <Compile Include="src\InsertionSort.cs" />
-    <Compile Include="src\ISorter.cs" />
-    <Compile Include="src\SelectionSort.cs" />
+    <Compile Include="src\Sorting\InsertionSort.cs" />
+    <Compile Include="src\Sorting\ISorter.cs" />
+    <Compile Include="src\Sorting\MergeSort.cs" />
+    <Compile Include="src\Sorting\SelectionSort.cs" />
     <Compile Include="test\Sorter.Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

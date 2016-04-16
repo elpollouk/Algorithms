@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Algorithms
+namespace Algorithms.Sorting.Tests
 {
     public class SorterTests
     {
