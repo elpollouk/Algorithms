@@ -10,8 +10,7 @@ namespace Algorithms
 
         ISorter NewSorter()
         {
-            string sorterType = TestContext.DataRow["sorter"].ToString();
-            ISorter sorter = Activator.CreateInstance(Type.GetType(sorterType)) as ISorter;
+            ISorter sorter = new InsertionSort();
             return sorter;
         }
 
@@ -38,7 +37,6 @@ namespace Algorithms
         }
 
         [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "c:\\projects\\cs\\algorithms\\algorithms\\data\\TestData.xml", "sorters", DataAccessMethod.Sequential)]
         public void Sort_ReverseOrder()
         {
             var sorter = NewSorter();
