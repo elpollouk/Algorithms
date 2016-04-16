@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<tests>
-  <sorters>
-    <sorter>Algorithms.InsertionSort</sorter>
-  </sorters>
-  <sorters>
-    <sorter>Algorithms.SelectionSort</sorter>
-  </sorters>
-</tests>

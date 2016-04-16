@@ -1,23 +1,21 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using System;
 
 namespace Algorithms
 {
-    [TestClass]
     public class SorterTests
     {
-        public TestContext TestContext { get; set; }
-
-        ISorter NewSorter()
+        ISorter NewSorter(Type sorterType)
         {
-            ISorter sorter = new InsertionSort();
+            var sorter = Activator.CreateInstance(sorterType) as ISorter;
             return sorter;
         }
 
-        [TestMethod]
-        public void Sort_BookOrder()
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_BookOrder(Type sorterType)
         {
-            ISorter sorter = NewSorter();
+            ISorter sorter = NewSorter(sorterType);
             int[] array = { 5, 2, 4, 6, 1, 3 };
             sorter.Sort(array);
 
@@ -25,10 +23,11 @@ namespace Algorithms
             CollectionAssert.AreEqual(expected, array);
         }
 
-        [TestMethod]
-        public void Sort_InOrder()
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_InOrder(Type sorterType)
         {
-            var sorter = NewSorter();
+            var sorter = NewSorter(sorterType);
             int[] array = { 1, 2, 3, 4, 5, 6 };
             sorter.Sort(array);
 
@@ -36,10 +35,11 @@ namespace Algorithms
             CollectionAssert.AreEqual(expected, array);
         }
 
-        [TestMethod]
-        public void Sort_ReverseOrder()
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_ReverseOrder(Type sorterType)
         {
-            var sorter = NewSorter();
+            var sorter = NewSorter(sorterType);
             int[] array = { 6, 5, 4, 3, 2, 1 };
             sorter.Sort(array);
 
