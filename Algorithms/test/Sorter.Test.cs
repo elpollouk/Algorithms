@@ -5,54 +5,64 @@ namespace Algorithms
 {
     public class SorterTests
     {
-        ISorter NewSorter(Type sorterType)
+        void BaseTest(Type sorterType, params int[] input)
         {
-            var sorter = Activator.CreateInstance(sorterType) as ISorter;
-            return sorter;
-        }
+            var expected = input.Clone() as int[];
+            Array.Sort(expected);
 
-        void BaseTest(Type sorterType, int[] input, int[] expected)
-        {
-            ISorter sorter = NewSorter(sorterType);
+            var sorter = Activator.CreateInstance(sorterType) as ISorter;
             sorter.Sort(input);
             CollectionAssert.AreEqual(expected, input);
         }
-
-        int[] a(params int[] args) => args;
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_BookOrder(Type sorterType)
         {
-            BaseTest(sorterType, a(5, 2, 4, 6, 1, 3), a(1, 2, 3, 4, 5, 6));
+            BaseTest(sorterType, 5, 2, 4, 6, 1, 3);
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_InOrder(Type sorterType)
         {
-            BaseTest(sorterType, a(1, 2, 3, 4, 5, 6), a(1, 2, 3, 4, 5, 6));
+            BaseTest(sorterType, 1, 2, 3, 4, 5, 6);
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_ReverseOrder(Type sorterType)
         {
-            BaseTest(sorterType, a(6, 5, 4, 3, 2, 1), a(1, 2, 3, 4, 5, 6));
+            BaseTest(sorterType, 6, 5, 4, 3, 2, 1);
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_EmptyList(Type sorterType)
         {
-            BaseTest(sorterType, a(), a());
+            BaseTest(sorterType);
         }
 
         [TestCase(typeof(InsertionSort))]
         [TestCase(typeof(SelectionSort))]
         public void Sort_SingleItem(Type sorterType)
         {
-            BaseTest(sorterType, a(6), a(6));
+            BaseTest(sorterType, 6);
+        }
+
+        [TestCase(typeof(InsertionSort))]
+        [TestCase(typeof(SelectionSort))]
+        public void Sort_500Random(Type sorterType)
+        {
+            for (var i = 0; i < 500; i++)
+            {
+                var input = new int[500];
+                var rnd = new Random();
+                for (var j = 0; j < input.Length; j++)
+                    input[j] = rnd.Next();
+
+                BaseTest(sorterType, input);
+            }
         }
     }
 }
