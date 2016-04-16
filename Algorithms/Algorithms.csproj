@@ -58,6 +58,7 @@
     <Compile Include="src\Searching\BinarySearch.cs" />
     <Compile Include="src\Searching\ISearcher.cs" />
     <Compile Include="src\Searching\LinearSearch.cs" />
+    <Compile Include="src\Sorting\BubbleSort.cs" />
     <Compile Include="src\Sorting\InsertionSort.cs" />
     <Compile Include="src\Sorting\ISorter.cs" />
     <Compile Include="src\Sorting\MergeSort.cs" />
