@@ -211,13 +211,13 @@ namespace Algorithms.Searching.Tests
         }
 
         [TestCaseSource("types")]
-        public void Search_500Items(Type searcherType)
+        public void Search_1000Items(Type searcherType)
         {
             var rnd = new Random();
-            for (var i = 0; i < 500; i++)
+            for (var i = 0; i < 1000; i++)
             {
                 var nextValue = rnd.Next(4);
-                var values = new int[500];
+                var values = new int[1000];
                 for (var j = 0; j < values.Length; j++)
                 {
                     values[j] = nextValue;
