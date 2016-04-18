@@ -8,7 +8,8 @@ namespace Algorithms.MaximumSubArray.Tests
         static Type[] types =
         {
             typeof(NlgN),
-            typeof(Nsquared)
+            typeof(Nsquared),
+            typeof(Linear)
         };
 
         void BaseTest(Type type, MaxSubArray expected, params int[] values)
@@ -106,6 +107,13 @@ namespace Algorithms.MaximumSubArray.Tests
         {
             BaseTest(type, Expected(0, 1, 3),
                 7, 10, 8);
+        }
+
+        [TestCaseSource("types")]
+        public void MaximumSubArray_DecreasingOverall(Type type)
+        {
+            BaseTest(type, Expected(1, 4, 7),
+                100, 65, 68, 67, 72, 66, 54);
         }
     }
 }
