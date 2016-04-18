@@ -5,6 +5,14 @@ namespace Algorithms.Sorting.Tests
 {
     public class SortingTests
     {
+        static Type[] types =
+        {
+            typeof(InsertionSort),
+            typeof(SelectionSort),
+            typeof(MergeSort),
+            typeof(BubbleSort)
+        };
+
         void BaseTest(Type sorterType, params int[] input)
         {
             var expected = input.Clone() as int[];
@@ -15,55 +23,37 @@ namespace Algorithms.Sorting.Tests
             CollectionAssert.AreEqual(expected, input);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_BookOrder(Type sorterType)
         {
             BaseTest(sorterType, 5, 2, 4, 6, 1, 3);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_InOrder(Type sorterType)
         {
             BaseTest(sorterType, 1, 2, 3, 4, 5, 6);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_ReverseOrder(Type sorterType)
         {
             BaseTest(sorterType, 6, 5, 4, 3, 2, 1);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_EmptyList(Type sorterType)
         {
             BaseTest(sorterType);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_SingleItem(Type sorterType)
         {
             BaseTest(sorterType, 6);
         }
 
-        [TestCase(typeof(InsertionSort))]
-        [TestCase(typeof(SelectionSort))]
-        [TestCase(typeof(MergeSort))]
-        [TestCase(typeof(BubbleSort))]
+        [TestCaseSource("types")]
         public void Sort_500Random(Type sorterType)
         {
             for (var i = 0; i < 500; i++)

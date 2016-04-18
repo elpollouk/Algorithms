@@ -50,7 +50,6 @@ namespace Algorithms.MaximumSubArray
             var leftSum = Int32.MinValue;
             var sum = 0;
             var maxLeft = mid - 1;
-
             for (var i = mid - 1; i >= start; i--)
             {
                 sum += values[i];
