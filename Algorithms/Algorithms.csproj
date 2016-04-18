@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="src\MaximumSubArray\ISearcher.cs" />
     <Compile Include="src\MaximumSubArray\NlgN.cs" />
+    <Compile Include="src\MaximumSubArray\Nsquared.cs" />
+    <Compile Include="src\MaximumSubArray\SearcherBase.cs" />
     <Compile Include="src\Searching\BinarySearch.cs" />
     <Compile Include="src\Searching\ISearcher.cs" />
     <Compile Include="src\Searching\LinearSearch.cs" />

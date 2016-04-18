@@ -7,7 +7,8 @@ namespace Algorithms.MaximumSubArray.Tests
     {
         static Type[] types =
         {
-            typeof(NlgN)
+            typeof(NlgN),
+            typeof(Nsquared)
         };
 
         void BaseTest(Type type, MaxSubArray expected, params int[] values)
