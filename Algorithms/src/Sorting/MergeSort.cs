@@ -33,14 +33,14 @@ namespace Algorithms.Sorting
             {
                 if (bufferIndex == bufferLength)
                     return; // Everything in the second list should already be in the correct place
+
                 else if (secondSortedIndex == lastIndex)
-                {
                     for (; i < lastIndex; i++)
                         array[i] = buffer[bufferIndex++];
-                    return;
-                }
+
                 else if (buffer[bufferIndex] < array[secondSortedIndex])
                     array[i] = buffer[bufferIndex++];
+
                 else
                     array[i] = array[secondSortedIndex++];
             }

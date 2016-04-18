@@ -48,7 +48,6 @@ namespace Algorithms.test.Problems
                     total += moved * (lastIndex - i);
                     for (; i < lastIndex; i++)
                         array[i] = buffer[bufferIndex++];
-                    return total;
                 }
                 else if (buffer[bufferIndex] < array[secondSortedIndex])
                 {
