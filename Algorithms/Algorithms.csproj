@@ -55,6 +55,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="src\MaximumSubArray\ISearcher.cs" />
+    <Compile Include="src\MaximumSubArray\NlgN.cs" />
     <Compile Include="src\Searching\BinarySearch.cs" />
     <Compile Include="src\Searching\ISearcher.cs" />
     <Compile Include="src\Searching\LinearSearch.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="src\Sorting\ISorter.cs" />
     <Compile Include="src\Sorting\MergeSort.cs" />
     <Compile Include="src\Sorting\SelectionSort.cs" />
+    <Compile Include="test\MaximumSubArrayTests.cs" />
     <Compile Include="test\Problems\Inversions.cs" />
     <Compile Include="test\SearchingTests.cs" />
     <Compile Include="test\SortingTests.cs" />
