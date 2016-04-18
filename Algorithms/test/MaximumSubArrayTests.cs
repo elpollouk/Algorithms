@@ -60,6 +60,13 @@ namespace Algorithms.MaximumSubArray.Tests
         }
 
         [TestCaseSource("types")]
+        public void MaximumSubArray_AllSame(Type type)
+        {
+            BaseTest(type, Expected(0, 0, 0),
+                31, 31, 31, 31, 31);
+        }
+
+        [TestCaseSource("types")]
         public void MaximumSubArray_Empty(Type type)
         {
             BaseTest(type, Expected(0, 0, 0));
