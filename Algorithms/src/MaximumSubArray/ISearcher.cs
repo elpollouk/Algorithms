@@ -1,7 +1,9 @@
 ﻿namespace Algorithms.MaximumSubArray
 {
-    struct MaxSubArray
+    class MaxSubArray
     {
+        public static readonly MaxSubArray NoResult = new MaxSubArray(-1, -1, 0);
+
         public MaxSubArray(int start, int end, int sum)
         {
             Start = start;

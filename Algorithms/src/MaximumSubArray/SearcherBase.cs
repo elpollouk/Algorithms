@@ -2,21 +2,20 @@
 {
     abstract class SearcherBase : ISearcher
     {
-        protected static readonly MaxSubArray NoResult = new MaxSubArray(0, 0, 0);
         protected abstract MaxSubArray Search(int[] values, int start, int end);
 
         public MaxSubArray Search(int[] values)
         {
             if (values.Length <= 1)
-                return NoResult;
+                return MaxSubArray.NoResult;
 
             values = Tansform(values);
 
             var r = Search(values, 0, values.Length);
-            return r.Sum < 1 ? NoResult : r;
+            return r.Sum < 1 ? MaxSubArray.NoResult : r;
         }
 
-        static int[] Tansform(int[] values)
+        private static int[] Tansform(int[] values)
         {
             var t = new int[values.Length - 1];
 
