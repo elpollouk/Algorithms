@@ -50,34 +50,34 @@ namespace Algorithms.MaximumSubArray.Tests
         [TestCaseSource("types")]
         public void MaximumSubArray_AllDecreasing(Type type)
         {
-            BaseTest(type, MaxSubArray.NoResult,
+            BaseTest(type, MaxSubArray.None,
                 31, 22, 14, 5, 4);
         }
 
         [TestCaseSource("types")]
         public void MaximumSubArray_AllDecreasing_FlatZone(Type type)
         {
-            BaseTest(type, MaxSubArray.NoResult,
+            BaseTest(type, MaxSubArray.None,
                 31, 22, 14, 14, 4);
         }
 
         [TestCaseSource("types")]
         public void MaximumSubArray_AllSame(Type type)
         {
-            BaseTest(type, MaxSubArray.NoResult,
+            BaseTest(type, MaxSubArray.None,
                 31, 31, 31, 31, 31);
         }
 
         [TestCaseSource("types")]
         public void MaximumSubArray_Empty(Type type)
         {
-            BaseTest(type, MaxSubArray.NoResult);
+            BaseTest(type, MaxSubArray.None);
         }
 
         [TestCaseSource("types")]
         public void MaximumSubArray_SingleItem(Type type)
         {
-            BaseTest(type, MaxSubArray.NoResult,
+            BaseTest(type, MaxSubArray.None,
                 5);
         }
 

@@ -7,12 +7,12 @@
         public MaxSubArray Search(int[] values)
         {
             if (values.Length <= 1)
-                return MaxSubArray.NoResult;
+                return MaxSubArray.None;
 
             values = Tansform(values);
 
             var r = Search(values, 0, values.Length);
-            return r.Sum < 1 ? MaxSubArray.NoResult : r;
+            return r.Sum < 1 ? MaxSubArray.None : r;
         }
 
         private static int[] Tansform(int[] values)
